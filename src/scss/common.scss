@@ -1,0 +1,473 @@
+body,p,table,tr,td,form,input,img,h1,h2,h3,h4,h5,h6,fieldset,dl,dt,dd,ul,li,ol{
+	margin:0;
+	padding:0;
+}
+body{
+	font-family: tahoma,\5b8b\4f53;
+	// background: #eee;
+	font-size:12px;
+}
+img{
+	border:none;
+}
+a{
+	text-decoration:none;
+	&:hover {
+		cursor:pointer;
+		text-decoration: underline;
+	}
+}
+ul,ol{
+	list-style:none;
+}
+.clear::after{
+	display:block;
+	content:"";
+	clear:both;
+	height:0;
+	overflow:hidden;
+	visibility:hidden;
+}
+.banxin{
+	width: 1200px;
+	margin:0 auto;
+}
+.fl{
+	float:left;
+	display: inline;
+}
+.fr{
+	float:right;
+	display: inline;
+}
+input{
+	outline:none;
+}
+%a{
+
+	display: inline-block;
+	height:24px;
+	cursor:pointer;
+	color: #484848;
+	background: url(../img/topbar_sprite.png) no-repeat;
+	
+}
+%border{
+	white-space: nowrap;
+	background-color: #fff;
+	border: 1px solid #eee;
+	box-shadow: 2px 2px 5px rgba(0,0,0,.2);
+	padding: 3px 10px 6px;
+	position: absolute;
+	top: 23px;
+}
+%goodIcon{
+	display: inline-block;
+	width: 14px;
+	height: 13px;
+	background:url(../img/goodslist_sprit.png) no-repeat ;
+	vertical-align: middle;
+}
+%jt{
+	width: 15px;
+	height: 15px;
+}
+// topbar
+#topBar{
+	height: 24px;
+	line-height: 24px;
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #e2e2e2;
+    font-size: 12px;
+    .wraper{
+    	.barLeft{
+    		width: 152px;
+			li{
+				float:left;
+				margin-right: 10px;
+				.phone{
+					@extend %a;
+    				text-indent: 16px;	
+    				background-position: 0 7px;
+
+				}
+				.groupBuy{
+					@extend %a;
+					text-indent: 20px;
+					background-position: 0 -127px;
+					
+				}
+				
+			}
+    	}
+    	
+		.barRight{
+			.user{
+				a{
+					color: #666;
+				}
+				b{
+					font-weight: normal;
+		    		display: inline-block;
+		   			margin: 0 8px;
+				}
+				.welc{
+					margin-left: 5px;
+					span{
+						color:#039;
+					}
+				}
+			}
+			.barRightList{
+				margin-left:5px;
+				position:relative;
+				li{
+					float:left;
+					padding: 0 5px;
+					position:relative;
+					a{
+						color: #666;
+						display: inline-block;
+						em{
+							display: inline-block;
+							width: 6px;
+							height: 4px;
+							background: url(../img/sprite_v.png) no-repeat 0 -27px;
+							margin-left:3px;
+						}
+					}
+					&:hover .submenu{
+						display: block;
+					}	
+				}
+				#mynewegg a{
+					text-decoration: none;
+					
+				}
+				.service a{
+					text-decoration: none;
+				}
+				.login{
+					@extend %border;
+				    left: -20px;
+				    z-index: 2;
+				    display: none;
+					a{
+						color: #039;
+						text-align: center;
+					}
+				}
+				.connect{
+					@extend %border;
+					left: -75px;
+					z-index: 2;
+					display: none;
+					.info{
+		    			padding: 3px 0 8px 8px;
+						span{
+							display: block;
+							line-height: 18px;
+							font-size:14px;
+							color:#fe7b23;
+							font-weight: bold;
+						}
+						strong{
+							display: block;
+							font-weight: bold;
+						}
+
+					}
+					.connect_way{
+						a{
+							display: inline-block;
+							width: 60px;
+							height: 25px;
+							background: #4f9ee7;
+							color:#fff;
+							text-align:center;
+						}
+					}
+				}
+			}
+		}
+    }
+}
+// header
+.header{
+	height:86px;
+	line-height:86px;
+	position:relative;
+	.logo{
+		img{
+			vertical-align: middle;
+		}
+	}
+	.search{
+		float:left;
+		left: 368px;
+	    height: 34px;
+	    position: absolute;
+	    top: 18px;
+		.searchBox{
+			width: 337px;
+			height: 30px;
+		    line-height: 30px;
+		    border: 2px solid #f60;
+		    float: left;
+		    input{
+		    	background: none;
+			    text-indent: 6px;
+			    height: 27px;
+			    color: #b7b7b7;
+			    border:0;
+			    width: 337px;
+			    font-size: 12px;
+			    outline:none;
+		    }
+		}
+		.searchBtn{
+			width:100px;
+			height: 34px;
+			line-height:34px;
+			background: #f60;
+			font-size:14px;
+			color:#fff;
+			text-align: center;
+			border-radius: 0 3px 3px 0;
+			font-weight:bold; 
+		}
+	}
+	.hot{
+		margin-top: 4px;
+	    overflow: hidden;
+	    clear: both;
+	    line-height: 29px;
+		a{
+			font-size: 12px;
+	    	color: #767676;
+	    	margin: 0 6px;
+	    	&:hover {
+						cursor:pointer;
+						text-decoration: underline;
+					}
+		}
+		b{
+			font-weight: normal;
+		    display: inline-block;
+		    margin: 0 8px;
+		}
+	}
+}
+// nav
+.nav{
+	background-color: #10286c;
+	height: 40px;
+	border-sizing:border-box;
+	.wrap{
+		.navLeft{
+			width: 175px;
+			height:36px;
+			border:2px solid #F60;
+			background-color: #F60;
+			position:relative;
+			h3{
+				background:url(../img/sprite_v.png) no-repeat 120px -1252px;
+				a{
+				    display: block;
+				    color: #FFF;
+				    font: 14px/40px microsoft yahei;
+				    padding-left: 20px;
+				    text-decoration: none;
+				}
+			}
+			.goodList{
+				border:2px solid #F60;
+				border-top:none;
+				position:absolute;
+				left:-2px;
+				top:38px;
+				width: 175px;
+				// background: pink;
+				li{
+					height:42px;
+					border-bottom:1px solid #e5e5e5;
+					font-weight:bold;
+					padding:15px 5px; 
+					background: url(../img/sprite_v.png) no-repeat 145px -1539px;
+				
+					.top{
+						position: relative;
+						.plane{
+							@extend %goodIcon;
+							background-position:0 0; 
+						}
+						a{
+							display: inline;
+							color:#333333;
+							padding-left: 0px;
+						}
+					}
+					.bottom{
+						margin-left:15px;
+						margin-top:10px;
+						a{
+							color:#666666;
+							font-weight:100;
+						}
+					}	
+				}
+				li:last-child{
+					height:175px;
+					border-bottom:none;
+					padding-bottom:0;
+					.row{
+						height:27px;
+						line-height:27px;
+					}
+				}
+			}
+		}
+		.navCenter{ 
+			width:500px;
+			height:40px;
+			line-height: 40px;
+			padding-left: 11px;
+			a{
+				padding:0 20px;
+				color:#fff;
+				float:left;
+				font-weight:bold;
+				text-decoration: none;
+				&:hover{
+					background: #295DD7;
+				}
+			}
+		}
+		.navRight{
+			position:relative;
+			border:2px solid #f60;
+			border-bottom:none;
+			height:38px;
+			border-sizing:border-box;
+			li{
+				width: 116px;
+				background: #f60;
+				height:38px;
+				a{
+					line-height: 36px;
+					color:#fff;
+					font-size: 12px;
+					padding: 0 29px 0 13px;
+					position:relative;
+					span{
+						color:#ffb380;
+						padding: 0 8px;
+					}
+					em{
+				    	width: 8px;
+					    height: 4px;
+					    position: absolute;
+					    background: url(../img/sprite_v.png)no-repeat 0 -1242px;
+					    right: -20px;
+					    top: 5px;
+				    }
+				}
+				.submenu{
+					position:absolute;
+					left:-2px;
+					top:38px;
+					background: #fff;
+					color:#999;
+					.empty{
+						display: none;
+						width: 212px;
+						padding:35px 10px;
+						border:2px solid #f60;
+						border-top:none;
+						em{
+							display: inline-block;
+							width: 20px;
+						    height: 25px;
+						    vertical-align: middle;
+						    margin-top: -4px;
+						    background: url(../img/sprite_v.png) no-repeat 0 -1076px;
+						}
+
+					}
+					.noupdate{
+						display: none;
+						text-align: center;
+						width: 212px;
+						padding:35px 10px;
+						border:2px solid #f60;
+						border-top:none;
+					}
+					
+				}
+				&:hover{
+					background-color: #fff;
+				}
+				&:hover a{
+					color:black;
+				}
+				&.mycar:hover .mycarA em{
+					background: url(../img/sprite_v.png)no-repeat -8px -1242px;
+				}
+				&.mycar:hover .submenu .empty{
+					display: block;
+				}
+				&.collect:hover .submenu .noupdate{
+					display: block;
+				}
+				&.collect:hover .collectA em{
+					background: url(../img/sprite_v.png)no-repeat -8px -1242px;
+				}
+
+			}	
+
+		}
+	}
+}
+//footer
+.footer{
+	height: 100px;
+	margin-top:80px;
+	margin-bottom:40px;
+	.lineOne{
+		text-align:center;
+		a{
+			background: url(../img/certi.png) no-repeat;
+			display: inline-block;
+			height:45px;	
+		}
+		a:nth-child(1){
+			width: 123px;
+			background-position:0 0;
+		}
+		a:nth-child(2){
+			width: 116px;
+			background-position:0 -92px;
+		}
+		a:nth-child(3){
+			width: 130px;
+			background-position:0 -276px;
+		}
+		a:nth-child(4){
+			width: 127px;
+			background-position:0 -326px;
+		}
+		a:nth-child(5){
+			width: 106px;
+			background-position:0 -376px;
+		}
+	}
+	.pStyle{
+		text-align:center;
+		height: 30px;
+		line-height:30px;
+		a{
+			color:#000;
+		}		
+	}
+	
+}

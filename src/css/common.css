@@ -1,0 +1,25 @@
+body,p,table,tr,td,form,input,img,h1,h2,h3,h4,h5,h6,fieldset,dl,dt,dd,ul,li,ol{
+	margin:0;
+	padding:0;
+}
+body{
+	font-family: tahoma,\5b8b\4f53!important;
+    font-size: 12px;
+}
+img{
+	border:none;
+}
+a{
+	text-decoration:none;
+}
+ul,ol{
+	list-style:none;
+}
+.clear::after{
+	display:block;
+	content:"";
+	clear:both;
+	height:0;
+	overflow:hidden;
+	visibility:hidden;
+}
